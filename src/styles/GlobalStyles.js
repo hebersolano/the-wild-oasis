@@ -1,6 +1,5 @@
 import { createGlobalStyle } from "styled-components";
 
-const GlobalStyles = createGlobalStyle`
 /*
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -16,6 +15,7 @@ const GlobalStyles = createGlobalStyle`
 
 /* Colors adapted from https://tailwindcss.com/docs/customizing-colors */
 
+const GlobalStyles = createGlobalStyle`
 :root {
   /* Indigo */
   --color-brand-50: #eef2ff;
