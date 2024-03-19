@@ -12,6 +12,13 @@ React project from the [Ultimate React Course](https://github.com/jonasschmedtma
   - Design and structure the base app layout
 - React router:
   - Structure app routes with `BrowserRouter`, `Routes` and `Route` components
+- Supabase:
+  - Create tables for "bookings", "cabins", "guests", "settings" and "users"
+  - Setting polices for data access of each table
+  - Create a supabase client to fetch data from tables with `@supabase/supabase-js` library
+  - Create buckets to store avatars and cabins images
+- React Query:
+  -
 
 ## Planning:
 
