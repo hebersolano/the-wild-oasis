@@ -1,5 +1,6 @@
 import { formatDistance, parseISO } from "date-fns";
 import { differenceInDays } from "date-fns";
+import { supabaseUrl } from "../services/supabase";
 
 // We want to make this function work for both Date objects and strings (which come from Supabase)
 export const subtractDates = (dateStr1, dateStr2) =>
@@ -26,3 +27,12 @@ export const getToday = function (options = {}) {
 
 export const formatCurrency = (value) =>
   new Intl.NumberFormat("en", { style: "currency", currency: "USD" }).format(value);
+
+export function createImageNamePath(fileName) {
+  const imageName = `${Math.random()}-${fileName}`.replaceAll("/", "");
+
+  const imagePath = `${supabaseUrl}/storage/v1/object/public/cabins-images/${imageName}`;
+  // https://cvgvnkcsrpnnqqnnxerq.supabase.co/storage/v1/object/public/cabins-images/cabin-001.jpg?t=2024-03-19T03%3A06%3A56.367Z
+
+  return { imageName, imagePath };
+}
