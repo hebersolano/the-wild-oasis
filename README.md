@@ -14,11 +14,17 @@ React project from the [Ultimate React Course](https://github.com/jonasschmedtma
   - Structure app routes with `BrowserRouter`, `Routes` and `Route` components
 - Supabase:
   - Create tables for "bookings", "cabins", "guests", "settings" and "users"
-  - Setting polices for data access of each table
   - Create a supabase client to fetch data from tables with `@supabase/supabase-js` library
   - Create buckets to store avatars and cabins images
-- React Query:
-  -
+  - Setting polices for data access of each table and bucket
+- React Query (TanStak Query):
+  - Fetch data from supabase with `useQuery` hook every time the "cabins" page is open
+  - Create a mutation function with `useMutation` react query hook to handle submit to server. Configure "mutationFn", "onSuccess" and "onError" functions to handle fetching.
+- React Hook Form
+  - Register input fields into the hook with "register" and apply validation.
+  - "HandleSubmit" form with onSubmit and onError functions
+  - Reload data using the "queryClient" to invalidate previous data query when mutation function is "onSuccess". Reset fields values
+  - Handle form errors
 
 ## Planning:
 

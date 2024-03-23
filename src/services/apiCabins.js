@@ -23,13 +23,14 @@ export async function createEditCabin(newCabin, id) {
   console.log(newCabin, id);
 
   const hasImageFile = newCabin.image.constructor.name === "File";
+
   const { imageName, imagePath } = createImageNamePath(newCabin.image.name);
 
   // 1. create/edit a cabin
   let query = supabase.from("cabins");
   // a) create new cabin
-  let response = { data: {}, error: null };
-  if (!id) query = query.insert([{ ...newCabin, image: imagePath }]);
+  if (!id)
+    query = query.insert([{ ...newCabin, image: hasImageFile ? imagePath : newCabin.image }]);
 
   // b) edit cabin
   if (id)
