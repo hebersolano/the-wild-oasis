@@ -37,7 +37,7 @@ export function useDeleteCabin() {
   return { isDeleting, deleteCabin };
 }
 
-export function useCreateCabin(reset) {
+export function useCreateCabin() {
   const queryClient = useQueryClient();
 
   const { mutate: createCabin, isLoading: isCreating } = useMutation({
@@ -47,7 +47,6 @@ export function useCreateCabin(reset) {
       queryClient.invalidateQueries({
         queryKey: ["cabins"],
       });
-      reset && reset(); // reset function from React Form Hook
     },
     onError: (error) => {
       console.error(error);
@@ -78,15 +77,6 @@ export function useEditCabin(reset) {
       queryClient.invalidateQueries({
         queryKey: ["cabins"],
       });
-      reset &&
-        reset({
-          name: "",
-          maxCapacity: "",
-          regularPrice: "",
-          discount: "",
-          description: "",
-          image: "",
-        }); // reset function from React Form Hook, we have to set a new default values because defaultValues in useForm hook were set to edit a cabin
     },
     onError: (error) => {
       console.error(error);

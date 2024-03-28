@@ -25,6 +25,8 @@ React project from the [Ultimate React Course](https://github.com/jonasschmedtma
   - "HandleSubmit" form with onSubmit and onError functions
   - Reload data using the "queryClient" to invalidate previous data query when mutation function is "onSuccess". Reset fields values
   - Handle form errors
+- Advance react patterns
+  - Compound component pattern:
 
 ## Planning:
 
